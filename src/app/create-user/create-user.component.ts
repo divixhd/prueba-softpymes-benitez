@@ -52,6 +52,7 @@ export class CreateUserComponent implements OnInit {
   createUsers(body) {
     return new Promise((resolve, reject) => {
       this.angularFirestore.collection('lista-usuarios').add(body).then((result) => {
+        alert('Usuario creado con éxito');
         this.router.navigate(['/lista-usuarios']);
         resolve("OK")
       }).catch((err) => {

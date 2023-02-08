@@ -65,6 +65,7 @@ export class EditUserComponent implements OnInit {
     return new Promise((resolve, reject) => {
       this.angularFirestore.collection('lista-usuarios').doc(this.idSelected).update(body).then(() => {
         //this.notificationsService.showSuccess("Formulario creado exitosamente!");
+        alert('Usuario actualizado con éxito');
         this.router.navigate(['/lista-usuarios']);
         resolve("OK")
       })

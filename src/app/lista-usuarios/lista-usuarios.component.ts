@@ -45,6 +45,7 @@ export class ListaUsuariosComponent implements OnInit {
     return new Promise((resolve, reject) => {
       this.angularFirestore.collection('lista-usuarios').doc(id).delete() //en delete no necesitamos enviar objeto
         .then(() => {
+          alert('Usuario eliminado con éxito');
           resolve("OK")
 
           //después de eliminar el documento, leemos toda la coleccion (opcional)
