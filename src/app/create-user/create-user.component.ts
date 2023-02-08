@@ -32,7 +32,6 @@ export class CreateUserComponent implements OnInit {
       role: [''],
       correo: [''],
       telefono: [''],
-      contrasena: [''],
     });
   }
 
@@ -42,13 +41,11 @@ export class CreateUserComponent implements OnInit {
     dto['correo'] = this.formUser.controls['correo'].value;
     dto['telefono'] = this.formUser.controls['telefono'].value;
     dto['role'] = this.formUser.controls['role'].value;
-    dto['contrasena'] = this.formUser.controls['contrasena'].value;
     const body = JSON.parse(JSON.stringify(dto));
     this.crear(body)
   }
 
   crear(body) {
-    //this.SignUp(this.formUser.controls['correo'].value,this.formUser.controls['contrasena'].value);
     this.createUsers(body);
   }
 
@@ -61,16 +58,5 @@ export class CreateUserComponent implements OnInit {
         reject(err)
       })
     });
-  }
-  SignUp(email, password) {
-    return this.angularFireAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        window.alert('You have been successfully registered!');
-        console.log(result.user);
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
   }
 }

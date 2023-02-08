@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { GeneralService } from '../general.service';
+import { LoginServiceService } from '../login-service.service';
 
 @Component({
   selector: 'app-lista-usuarios',
@@ -12,6 +13,7 @@ import { GeneralService } from '../general.service';
 export class ListaUsuariosComponent implements OnInit {
   listaUsusario  = [];
   constructor(public angularFirestore: AngularFirestore,
+    public loginService: LoginServiceService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -55,5 +57,8 @@ export class ListaUsuariosComponent implements OnInit {
           alert("Error: " + err)
         })
     })
+  }
+  logout(){
+
   }
 }

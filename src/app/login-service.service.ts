@@ -31,6 +31,7 @@ export class LoginServiceService {
       localStorage.setItem('userEmail', result.user.email);
       this.authSuccessfully()
     }).catch((err) => {
+      alert('Usuario o contraseña no valida');
     })
 
   }

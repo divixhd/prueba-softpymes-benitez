@@ -1,1 +1,16 @@
-<p>registrar works!</p>
+<div class="col-lg-6 offset-lg-3 " style="margin-top: 12.5%;" >
+  <h3>Registro de usuarios</h3>
+  <div class="row justify-content-center">
+    <div style="margin-top: 1.5em;">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" [(ngModel)]="email">
+    </div>
+    <div style="margin-top: 1.5em;">
+      <label for="exampleFormControlInput1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="Password" [(ngModel)]="password">
+    </div>
+    <div class="col-auto" style="margin-top: 1em;">
+      <button type="submit" class="btn btn-primary mb-3" (click)="Registrar()">Registrar</button>
+    </div>
+  </div>
+</div>

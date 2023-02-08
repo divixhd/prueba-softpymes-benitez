@@ -1,5 +1,5 @@
 <form class="col-lg-6 offset-lg-3 " style="margin-top: 12.5%;" [formGroup]="formUser" (ngSubmit)="finishForm()">
-  <h3>Crear usuarios</h3>
+  <h3>Crear Personas</h3>
   <div class="row justify-content-center">
     <div style="margin-top: 1.5em;">
       <label for="exampleFormControlInput1" class="form-label">Nombre</label>
@@ -16,10 +16,6 @@
     <div style="margin-top: 1.5em;">
       <label for="exampleFormControlInput1" class="form-label">Rol</label>
       <input type="text" class="form-control" id="exampleFormControlInput123"  formControlName="role">
-    </div>
-    <div style="margin-top: 1.5em;">
-      <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1234"  formControlName="contrasena">
     </div>
     <div class="col-auto" style="margin-top: 1em;">
       <button type="submit" class="btn btn-primary mb-3">Create</button>

@@ -1,4 +1,5 @@
 <div class="col-lg-6 offset-lg-3 ">
+  <h3>Lista de Personas</h3>
   <div class="col-auto" style="margin-top: 1em;">
     <button type="submit" class="btn btn-primary mb-3" (click)="createUser()">Create User</button>
   </div>
@@ -25,4 +26,7 @@
       </tr>
     </tbody>
   </table>
+  <div class="col-auto" style="margin-top: 1em;">
+    <button type="submit" class="btn btn-primary mb-3" (click)="loginService.logout()">Cerrar sesión</button>
+  </div>
 </div>
