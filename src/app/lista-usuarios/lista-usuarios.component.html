@@ -1,0 +1,28 @@
+<div class="col-lg-6 offset-lg-3 ">
+  <div class="col-auto" style="margin-top: 1em;">
+    <button type="submit" class="btn btn-primary mb-3" (click)="createUser()">Create User</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Rol</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of listaUsusario">
+        <td>{{user.data().nombre}}</td>
+        <td>{{user.data().role}}</td>
+        <td>{{user.data().correo}}</td>
+        <td>{{user.data().telefono}}</td>
+        <td>
+          <button type="submit" class="btn btn-primary mb-3" (click)="editUser(user.id)">Edit</button>
+          <br>
+          <button type="submit" class="btn btn-primary mb-3" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,24 @@
+<form class="col-lg-6 offset-lg-3 " style="margin-top: 12.5%;" [formGroup]="formUser" (ngSubmit)="create()">
+  <h3>Crear usuarios</h3>
+  <div class="row justify-content-center">
+    <div style="margin-top: 1.5em;">
+      <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="exampleFormControlInput10" formControlName="nombre">
+    </div>
+    <div style="margin-top: 1.5em;">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="correo">
+    </div>
+    <div style="margin-top: 1.5em;">
+      <label for="exampleFormControlInput1" class="form-label">Telefono</label>
+      <input type="text" class="form-control" id="exampleFormControlInput12" formControlName="telefono">
+    </div>
+    <div style="margin-top: 1.5em;">
+      <label for="exampleFormControlInput1" class="form-label">Rol</label>
+      <input type="text" class="form-control" id="exampleFormControlInput123"  formControlName="role">
+    </div>
+    <div class="col-auto" style="margin-top: 1em;">
+      <button type="submit" class="btn btn-primary mb-3">Update</button>
+    </div>
+  </div>
+</form>

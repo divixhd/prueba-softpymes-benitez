@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "proyectoprueba-9558c": {
+      "hosting": {
+        "prueba-softpymes-benitez": [
+          "proyectoprueba-9558c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "proyectoprueba-9558c"
+  }
+}
