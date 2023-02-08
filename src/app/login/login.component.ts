@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GeneralService } from '../general.service';
+import { LoginServiceService } from '../login-service.service';
 declare var window: any;
 
 @Component({
@@ -12,8 +13,10 @@ declare var window: any;
 export class LoginComponent implements OnInit {
   formLogin: FormGroup;
   formModal: any;
+  email
+  password
   constructor(private formBuilder: FormBuilder,
-    private service: GeneralService,
+    public loginService:LoginServiceService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -36,23 +39,20 @@ export class LoginComponent implements OnInit {
   }
   login(event: Event) {
     event.preventDefault();
+    /*
     if (this.formLogin.valid) {
       this.Login();
     }
+    */
+    this.Login();
   }
-  private Login() {
-    var user = {
-      email: this.formLogin.value.emailField,
-      password: this.formLogin.value.passwordField,
-    };
-    this.service.logininfo(user).subscribe((response: any) => {
-      if(response.token!=''){
-        this.router.navigate(['/lista-usuarios']);
-      }
-      else{
-        this.openFormModal();
-      }
-    });
+  Login(){
+    // this.abreModalGenerico("Autenticando...","un momento por favor...")
+    this.loginService.login(this.email,this.password)
+
+  }
+  createUser(){
+    this.router.navigate(['/registrar']);
   }
   openFormModal() {
     this.formModal.show();

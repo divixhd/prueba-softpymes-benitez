@@ -1,18 +1,19 @@
-<form class="col-lg-6 offset-lg-3 " style="margin-top: 12.5%;" [formGroup]="formLogin" (ngSubmit)="login($event)">
+<div class="col-lg-6 offset-lg-3 " style="margin-top: 12.5%;" >
   <div class="row justify-content-center">
     <div style="margin-top: 1.5em;">
       <label for="exampleFormControlInput1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" formControlName="emailField">
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" [(ngModel)]="email">
     </div>
     <div style="margin-top: 1.5em;">
       <label for="exampleFormControlInput1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="Password" formControlName="passwordField">
+      <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="Password" [(ngModel)]="password">
     </div>
     <div class="col-auto" style="margin-top: 1em;">
-      <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+      <button type="submit" class="btn btn-primary mb-3" (click)="login($event)">Confirm identity</button>
+      <button type="submit" class="btn btn-primary mb-3" (click)="createUser()">Registrar</button>
     </div>
   </div>
-</form>
+</div>
 <!--form modal-->
 <div
   class="modal fade"

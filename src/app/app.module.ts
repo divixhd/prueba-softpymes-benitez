@@ -24,6 +24,8 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AuthGuard } from './shared/guards/auth.guards';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 
 const firebaseConfig = {
@@ -46,7 +48,8 @@ firebase.initializeApp(firebaseConfig);
     ListaUsuariosComponent,
     LoginComponent,
     CreateUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,7 @@ firebase.initializeApp(firebaseConfig);
     AngularFireAuthModule, // auth
     AngularFireStorageModule, // storage
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { LoginComponent } from './login/login.component';
+import { RegistrarComponent } from './registrar/registrar.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -11,6 +12,8 @@ const routes: Routes = [
   { path: 'lista-usuarios', component: ListaUsuariosComponent },
   { path: 'crear-usuario', component: CreateUserComponent },
   { path: 'editar-usuario/:id', component: EditUserComponent },
+  { path: 'registrar', component: RegistrarComponent },
+
 ];
 
 @NgModule({

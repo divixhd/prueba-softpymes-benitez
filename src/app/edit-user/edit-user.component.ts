@@ -32,6 +32,7 @@ export class EditUserComponent implements OnInit {
       role: [''],
       correo: [''],
       telefono: [''],
+      contrasena: [''],
     });
   }
   async loadInfoForEdit(id?: any) {
@@ -45,6 +46,7 @@ export class EditUserComponent implements OnInit {
       this.formUser.get('role').setValue(objectMapReports.role)
       this.formUser.get('correo').setValue(objectMapReports.correo)
       this.formUser.get('telefono').setValue(objectMapReports.telefono)
+      this.formUser.get('contrasena').setValue(objectMapReports.contrasena);
     }).then(() => {
       //console.log(this.arraydeposts)
     }).catch((err) => {
@@ -57,6 +59,7 @@ export class EditUserComponent implements OnInit {
     dto['correo'] = this.formUser.controls['correo'].value;
     dto['telefono'] = this.formUser.controls['telefono'].value;
     dto['role'] = this.formUser.controls['role'].value;
+    dto['contrasena'] = this.formUser.controls['contrasena'].value;
     const body = JSON.parse(JSON.stringify(dto));
     this.createUsers(body)
   }
